@@ -1,3 +1,3 @@
-###   Autor: Dimitri Heinrich
+###   Author: Dimitri Heinrich
 
 * this repository for learning Basic Java
