@@ -2,12 +2,12 @@ package homework27.task02;
 
 public class BankAccount {
 
-  public String invoiceNum;
-  public double moneyAmount;
+  private String invoiceNum;
+  private double moneyAmount;
 
-  public BankAccount(String invoiceNum, double moneyAmount) {
+  public BankAccount(String invoiceNum) {
     this.invoiceNum = invoiceNum;
-    this.moneyAmount = moneyAmount;
+    this.moneyAmount = 0.0;
   }
 
   public String getInvoiceNum() {
@@ -21,7 +21,7 @@ public class BankAccount {
   public void withdraw(double amount) {
     if (amount > 0 && amount <= moneyAmount) {
       moneyAmount -= amount;
-      System.out.println("Сумма " + amount + " снята со счета. Новый баланс: " + moneyAmount + "€");
+      System.out.println("Сумма " + amount + " снята со счета. \nНовый баланс: " + moneyAmount + "€");
     } else {
       System.out.println("Недостаточно средств на счете.");
     }
@@ -30,7 +30,7 @@ public class BankAccount {
   public void deposit(double amount) {
     if (amount > 0) {
       moneyAmount += amount;
-      System.out.println("Сумма " + amount + " внесена на счет. Новый баланс: " + moneyAmount);
+      System.out.println("Сумма " + amount + " внесена на счет. \nНовый баланс: " + moneyAmount);
     } else {
       System.out.println("Неверная сумма для внесения.");
     }
