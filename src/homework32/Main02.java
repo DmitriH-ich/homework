@@ -6,9 +6,9 @@ public class Main02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
-        int[] arr = new int[11];
-        for (int i = 1; i < arr.length; i ++) {
-            System.out.println(number + " * " + i + " = " + number * i);
+
+        for (int a = 1; a <= 10; a++) {
+            System.out.println(number + " * " + a + " = " + number * a);
         }
     }
 }
