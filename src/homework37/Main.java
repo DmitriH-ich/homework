@@ -1,59 +1,24 @@
 package homework37;
 
-import java.util.Scanner;
-
 public class Main {
 
+    public static void printInfo(Tv tv) {
+        System.out.println("you are watching channel " + tv.getCurrentChanel());
+
+    }
+
     public static void main(String[] args) {
+        Tv tv = new Tv(4.5, 99);
+        Remote remote = new Remote(4.5);
+        printInfo(tv);
+        remote.swichChannelForward(tv);
+        printInfo(tv);
+        remote.swichChannelBackwards(tv);
+        printInfo(tv);
+        remote.setChanelManually(tv,25);
+        printInfo(tv);
+        remote.setChanelManually(tv,-1);
+        printInfo(tv);
 
-        RemoteControl remoteControl = new RemoteControl(60, 54,
-                60, 54);
-
-        remoteControl.status();
-        System.out.println("Нажмите на:\n1 - канал UP\n2 - канал DOWN\nили введите номер канала в ручную:");
-        Scanner scanner = new Scanner(System.in);
-        int ch = scanner.nextInt();
-        remoteControl.status();
-        if (ch <= 0 || ch >= 100) {
-            System.out.println("Такого канала не существует.");
-            return;
-        } else if (ch >= 3) {
-            // System.out.println("Введите номер канала в ручную");
-            //ch = scanner.nextInt();
-            remoteControl.changeFree(ch);
-            remoteControl.afterStatus();
-        } else if (ch == 1) {
-            remoteControl.changeUp();
-            remoteControl.afterStatus();
-        } else if (ch == 2) {
-            remoteControl.changeDown();
-            remoteControl.afterStatus();
-        }
-        remoteControl.status();
     }
 }
-
-
-/*
-Создать два класса - пульт и телевизор.
-В обоих классах описать свойство "частота" (frequency).
-В телевизоре описать свойство "текущий канал".
-Описать в обоих классах конструкторы и аксесоры.
-В пульте сделать методы чтобы:
-1 Переключить канал вперед;
-2 Переключить канал назад;
-3 Переключить канал произвольно (передать номер канала).
-Все методы должны принимать телевизор как параметр. Последний метод также должен принимать номер канала.
-Учтите, что каналы не должны быть отрицательными.
-Переключение канала должно происходить только в том случае, если частота пульта и телевизора совпадают.
-Если введенный в третьем методе канал имеет неправильный номер, не делать ничего.
-
-Дополнительное задание:
-Добавить в телевизор поле "максимальный канал".
-Сделать так чтобы каналы переключались как в реальном телевизоре: от 1 до максимального.
-Если попытаться переключить на один канал назад с канала 1, происходит переключение на максимальный канал.
-И наоборот, если с максимального канала переключить вперед, произойдет переход на 1 канал.
-
-Продемонстрировать работу разработанных классов в свободной в классе Main.
-В комментарии к main указать, какое это отношение (композиция, асоциация или агрегация).
- */

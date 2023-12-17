@@ -1,30 +1,37 @@
 package homework37;
 
 public class Tv {
-    private int frequencyTV;
-    private int СurrentChannel;
 
-    public Tv(int frequencyTV, int сurrentChannel) {
-        this.frequencyTV = frequencyTV;
-        СurrentChannel = сurrentChannel;
+    private double frequency;
+    private int currentChanel;
+
+
+    public Tv(double frequency, int currentChanel) {
+        this.frequency = frequency;
+        this.currentChanel = currentChanel;
     }
 
-    public int getFrequencyTV() {
-        return frequencyTV;
+    public double getFrequency() {
+        return frequency;
     }
 
-    public void setFrequencyTV(int frequencyTV) {
-        this.frequencyTV = frequencyTV;
+    public void setFrequency(double frequency) {
+        this.frequency = frequency;
     }
 
-    public int getСurrentChannel() {
-        return СurrentChannel;
+    public int getCurrentChanel() {
+        return currentChanel;
     }
 
-    public void setСurrentChannel(int сurrentChannel) {
-        this.СurrentChannel = сurrentChannel;
-    }
-    public void lifeChannel() {
-        System.out.println("На теливизоре показывает канал:  " + getСurrentChannel());
+    public void setCurrentChanel(int currentChanel) {
+        if (currentChanel >= 1 && currentChanel <= 99) {
+            this.currentChanel = currentChanel;
+        } else if (currentChanel == 0) {
+            this.currentChanel = 99;
+        } else if (currentChanel == 100) {
+            this.currentChanel = 1;
+        } else {
+            System.out.println("chanel don't exist");
+        }
     }
 }
