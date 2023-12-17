@@ -15,7 +15,7 @@ public class Person {
         this.name = name;
     }
     public void introduce() {
-        System.out.println("Hallo! Ich heiße " + getName());
+        System.out.println("Hello! my name is  " + name);
     }
 
 }
