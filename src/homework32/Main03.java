@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class Main03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // System.out.println("Введите число от 1 до 10: ");
-
         int number;
         do {
             System.out.println("Введите число от 1 до 10: ");
